@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Agregar Empleado</h2>
+
+  <form method="POST" class="shadow p-4 bg-light rounded">
+    {% csrf_token %}
+
+    <!-- Nombre y Apellido -->
+    <div class="row mb-3">
+      <div class="col">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" required>
+      </div>
+      <div class="col">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- Cargo y Fecha de Contratación -->
+    <div class="row mb-3">
+      <div class="col">
+        <label for="cargo">Cargo:</label>
+        <input type="text" name="cargo" class="form-control" required>
+      </div>
+      <div class="col">
+        <label for="fecha_contratacion">Fecha de Contratación:</label>
+        <input type="date" name="fecha_contratacion" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- Salario y Edad -->
+    <div class="row mb-3">
+      <div class="col">
+        <label for="salario">Salario:</label>
+        <input type="number" name="salario" step="0.01" class="form-control" required>
+      </div>
+      <div class="col">
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="row mb-3">
+      <div class="col">
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-success px-5">Guardar Empleado</button>
+    </div>
+
+  </form>
+</div>
+{% endblock %}
